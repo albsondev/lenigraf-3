@@ -1,17 +1,17 @@
 const header = document.querySelector('.header');
 const menuButton = document.querySelector('.menu-button');
-const navigation = document.querySelector('#site-nav');
+const navigation = document.querySelector('#navigation');
 
 addEventListener('scroll', () => header.classList.toggle('is-scrolled', scrollY > 8), { passive: true });
 
-menuButton.addEventListener('click', () => {
+menuButton?.addEventListener('click', () => {
   const open = navigation.classList.toggle('is-open');
   menuButton.setAttribute('aria-expanded', String(open));
 });
 
-navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
   navigation.classList.remove('is-open');
-  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton?.setAttribute('aria-expanded', 'false');
 }));
 
 document.querySelector('#year').textContent = new Date().getFullYear();
