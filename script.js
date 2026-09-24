@@ -1,17 +1,17 @@
-const header = document.querySelector('.site-header');
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('#menu');
+const header = document.querySelector('.header');
+const menuButton = document.querySelector('.menu-button');
+const navigation = document.querySelector('#site-nav');
 
-window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+addEventListener('scroll', () => header.classList.toggle('is-scrolled', scrollY > 8), { passive: true });
 
-menuToggle?.addEventListener('click', () => {
-  const open = menu.classList.toggle('is-open');
-  menuToggle.setAttribute('aria-expanded', String(open));
+menuButton.addEventListener('click', () => {
+  const open = navigation.classList.toggle('is-open');
+  menuButton.setAttribute('aria-expanded', String(open));
 });
 
-menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  menu.classList.remove('is-open');
-  menuToggle?.setAttribute('aria-expanded', 'false');
+navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  navigation.classList.remove('is-open');
+  menuButton.setAttribute('aria-expanded', 'false');
 }));
 
 document.querySelector('#year').textContent = new Date().getFullYear();
