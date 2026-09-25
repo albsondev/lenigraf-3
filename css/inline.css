@@ -69,10 +69,13 @@ body * {
 
 /* Improve hero copy contrast over changing video frames without hiding the video. */
 .hero-content {
+  position: relative;
+  z-index: 3;
+  visibility: visible;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 8px;
   max-width: 900px;
   margin: 0 auto;
   padding: 98px 24px 110px;
@@ -80,24 +83,30 @@ body * {
 }
 
 .hero-right {
+  position: relative;
+  z-index: 3;
+  visibility: visible;
   align-items: center;
-  width: min(100%, 520px);
-  padding: 24px 26px 26px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  box-shadow: 0 12px 30px rgba(7, 25, 44, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.46);
-  backdrop-filter: blur(10px) saturate(135%);
-  -webkit-backdrop-filter: blur(10px) saturate(135%);
+  width: min(100%, 1100px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  gap: 14px;
 }
 
 .hero-description {
-  color: #0a2447;
+  color: #fff;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+  font-size: clamp(0.9rem, 1.1vw, 1.15rem);
   font-weight: 400;
   line-height: 1.4;
   opacity: 1;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 /* Subtle text halo: improves the heading contrast without creating a panel. */
@@ -111,6 +120,7 @@ body * {
   max-width: 1000px;
   text-wrap: balance;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.48), 0 1px 2px rgba(0, 0, 0, 0.32);
+  margin-bottom: 0;
 }
 
 /* Soft white veil over the video: the motion remains visible as atmosphere. */
@@ -128,7 +138,8 @@ body * {
 
 @media screen and (min-width: 992px) {
   .hero-content {
-    max-width: 1200px;
+    width: min(1400px, calc(100vw - 80px));
+    max-width: none;
   }
 
   .hero-heading {
@@ -140,10 +151,19 @@ body * {
 
   .hero-right {
     align-items: stretch;
+    width: min(100%, calc(100vw - 48px));
+    max-width: none;
+  }
+
+  .hero-description {
+    max-width: none;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .hero-right .primary-button {
-    width: 100%;
+    width: auto;
+    align-self: center;
     justify-content: center;
     text-align: center;
     font-size: 15px;
@@ -153,8 +173,18 @@ body * {
 }
 
 @media screen and (min-width: 1024px) and (pointer: fine) {
+  .hero > .container {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+
   .hero-content {
-    transform: translateY(-320px);
+    position: absolute;
+    top: clamp(118px, 16%, 220px);
+    left: 0;
+    right: 0;
+    transform: none;
   }
 }
 
@@ -166,9 +196,13 @@ body * {
 
   .hero-right {
     width: 100%;
-    padding: 20px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.48);
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .hero-description {
+    white-space: normal;
   }
 }
 
