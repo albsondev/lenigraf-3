@@ -189,9 +189,56 @@ body * {
 }
 
 @media screen and (max-width: 767px) {
+  .hero {
+    padding-top: clamp(72px, 10vh, 112px);
+    padding-bottom: clamp(56px, 9vh, 88px);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 28px;
+    background: #fff;
+    filter: none;
+    clip-path: polygon(
+      0 0,
+      21.5% 0,
+      25% 100%,
+      75% 100%,
+      78.5% 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 28px;
+    pointer-events: none;
+    background: none;
+  }
+
   .hero-content {
     gap: 16px;
-    padding: 88px 18px 72px;
+    padding: clamp(24px, 4vh, 40px) 18px clamp(56px, 9vh, 88px);
+  }
+
+
+  .hero-heading {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(1.4rem, 6.2vw, 1.8rem);
+    letter-spacing: -0.045em;
   }
 
   .hero-right {
@@ -202,6 +249,7 @@ body * {
   }
 
   .hero-description {
+    font-size: 0.76rem;
     white-space: normal;
   }
 }
@@ -261,6 +309,55 @@ body * {
     height: 32px;
     max-width: none;
     transform: scale(1.45);
+  }
+}
+
+/* Mobile navigation trigger: visible hamburger only, without the legacy blue tile. */
+@media screen and (max-width: 767px) {
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.32) !important;
+    box-shadow: none !important;
+  }
+
+  .navbar .mobile-menu {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  .navbar .mobile-menu:hover,
+  .navbar .mobile-menu:focus-visible {
+    background: transparent;
+    color: #fff;
+  }
+
+  .navbar .site-icon-nav-menu {
+    display: block;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 26px;
+    font-size: 0;
+    color: #fff;
+    background: linear-gradient(
+      to bottom,
+      currentColor 0 3px,
+      transparent 3px 11px,
+      currentColor 11px 14px,
+      transparent 14px 22px,
+      currentColor 22px 25px
+    );
+  }
+
+  .navbar.is-scrolled .site-icon-nav-menu {
+    color: #082d72;
   }
 }
 
