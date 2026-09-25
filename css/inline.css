@@ -1,0 +1,113 @@
+.corner-crop {
+    clip-path: polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 0 100%);
+  }
+
+  .icon-corner-corp {
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  }
+
+  .social-icon-corner-corp {
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  }
+
+  .animation-text {
+    line-height: 1.1;
+    color: #d0d0d0;
+  }
+
+  .word {
+    display: inline-block;
+    white-space: pre;
+    will-change: color;
+  }
+
+  .cta-form-input.w-select {
+    appearance: none; /* Standard */
+    -webkit-appearance: none; /* Chrome/Safari */
+    -moz-appearance: none; /* Firefox */
+    background-image: none; /* Remove default arrow in some browsers */
+  }
+
+  .auto-tabs-content-item::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 100%;
+    max-height: 310px;
+    background-image: url(../assets/boaxt/69e9f5205ffea950f2e0040d_Rectangle%2034624701.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999999999999;
+  }
+
+  @media (max-width: 1024px){
+      .auto-tabs-content-item::before {
+        display:none;
+      }
+  }
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+/* Lenigraf navigation base: white translucent background only. */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.86) !important;
+  box-shadow: 0 6px 14px rgba(8, 30, 52, 0.18) !important;
+}
+
+.navbar .nav-logo-img {
+  height: 32px;
+  max-width: none;
+  transform: scale(1.75);
+  transform-origin: left center;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar .nav-logo-img {
+    height: 32px;
+    max-width: none;
+    transform: scale(1.45);
+  }
+}
+
+.navbar .primary-button {
+  position: relative;
+  color: #ffffff;
+  background: #082d72;
+  border: 0;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12);
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.navbar .primary-button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #42b9e8 0%, #e33136 52%, #f4c400 100%);
+  pointer-events: none;
+}
+
+.navbar .primary-button:hover,
+.navbar .primary-button:focus-visible {
+  color: #082d72;
+  background: #f4c400;
+  transform: translateY(-1px);
+}
+
+.w-webflow-badge {
+  display: none !important;
+}
