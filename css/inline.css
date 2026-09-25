@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body,
+body * {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
 .corner-crop {
     clip-path: polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 0 100%);
   }
@@ -66,9 +73,9 @@
   align-items: center;
   justify-content: center;
   gap: 22px;
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 140px 24px 110px;
+  padding: 98px 24px 110px;
   text-align: center;
 }
 
@@ -86,6 +93,9 @@
 
 .hero-description {
   color: #0a2447;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
   opacity: 1;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 }
@@ -93,7 +103,14 @@
 /* Subtle text halo: improves the heading contrast without creating a panel. */
 .hero-heading {
   color: #fff;
-  text-shadow: none;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  max-width: 1000px;
+  text-wrap: balance;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.48), 0 1px 2px rgba(0, 0, 0, 0.32);
 }
 
 /* Soft white veil over the video: the motion remains visible as atmosphere. */
@@ -110,6 +127,17 @@
 }
 
 @media screen and (min-width: 992px) {
+  .hero-content {
+    max-width: 1200px;
+  }
+
+  .hero-heading {
+    width: 100%;
+    max-width: 1200px;
+    font-size: clamp(2rem, 3.2vw, 3.8rem);
+    white-space: nowrap;
+  }
+
   .hero-right {
     align-items: stretch;
   }
@@ -124,10 +152,16 @@
   }
 }
 
+@media screen and (min-width: 1024px) and (pointer: fine) {
+  .hero-content {
+    transform: translateY(-320px);
+  }
+}
+
 @media screen and (max-width: 767px) {
   .hero-content {
     gap: 16px;
-    padding: 112px 18px 72px;
+    padding: 88px 18px 72px;
   }
 
   .hero-right {
