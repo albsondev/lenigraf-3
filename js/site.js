@@ -2,6 +2,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  document.title = 'LENIGRAF | Serviços de Acabamentos Gráficos';
+  const favicon = document.querySelector('link[rel="shortcut icon"], link[rel="icon"]');
+  if (favicon) {
+    favicon.href = 'assets/lenigraf/favicon.png';
+    favicon.type = 'image/png';
+  }
+  const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+  if (appleIcon) appleIcon.href = 'assets/lenigraf/favicon.png';
+
   // 1. Register plugins
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
