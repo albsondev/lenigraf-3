@@ -1,9 +1,15 @@
-!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);
-
 document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Register plugins
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  // Reveal states formerly handled by the removed export runtime.
+  const hiddenElements = document.querySelectorAll('[style*="opacity:0"]');
+  hiddenElements.forEach((element) => {
+    // Visibility must not depend on an animation or a scroll trigger.
+    element.style.opacity = '1';
+    element.style.removeProperty('transform');
+  });
 
   // 2. ScrollSmoother
   const smoother = ScrollSmoother.create({
