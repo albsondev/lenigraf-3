@@ -223,3 +223,18 @@ body * {
 .w-webflow-badge {
   display: none !important;
 }
+
+/* Site-owned interaction states. */
+.auto-tabs-content-item[hidden] {
+  display: none;
+}
+
+.success-message:not(.is-visible) {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .nav-menu-warapper.is-open {
+    display: flex;
+  }
+}

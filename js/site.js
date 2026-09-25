@@ -126,10 +126,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // 9. Tab hover (no nested DOMContentLoaded needed)
   const tabLinks = document.querySelectorAll('.auto-tabs-menu .w-tab-link');
   let hoverTimer;
+  const tabPanes = document.querySelectorAll('.auto-tabs-content-item');
+
+  function activateTab(tab) {
+    const tabName = tab.dataset.wTab;
+    tabLinks.forEach((link) => link.classList.toggle('w--current', link === tab));
+    tabPanes.forEach((pane) => {
+      const isActive = pane.dataset.wTab === tabName;
+      pane.classList.toggle('w--tab-active', isActive);
+      pane.hidden = !isActive;
+    });
+  }
+
   tabLinks.forEach((tab) => {
     tab.addEventListener('mouseenter', () => {
       hoverTimer = setTimeout(() => {
-        tab.click();
+        activateTab(tab);
       }, 150); // 150ms delay — adjust to taste
     });
     tab.addEventListener('mouseleave', () => {
@@ -137,6 +149,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     tab.addEventListener('click', (e) => {
       e.preventDefault();
+      activateTab(tab);
+    });
+  });
+
+  const initialTab = document.querySelector('.auto-tabs-menu .w--current') ?? tabLinks[0];
+  if (initialTab) activateTab(initialTab);
+
+  // Mobile navigation
+  const navigation = document.querySelector('.navbar');
+  const navigationButton = document.querySelector('.mobile-menu');
+  const navigationMenu = document.querySelector('.nav-menu-warapper');
+  if (navigation && navigationButton && navigationMenu) {
+    navigationButton.setAttribute('aria-expanded', 'false');
+    navigationButton.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('is-open');
+      navigationButton.setAttribute('aria-expanded', String(isOpen));
+      navigationMenu.classList.toggle('is-open', isOpen);
+    });
+    navigationMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navigation.classList.remove('is-open');
+        navigationMenu.classList.remove('is-open');
+        navigationButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Native form feedback
+  document.querySelectorAll('.cta-form form').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const successMessage = form.parentElement.querySelector('.success-message');
+      if (successMessage) successMessage.classList.add('is-visible');
+      form.reset();
     });
   });
 
