@@ -60,6 +60,34 @@
     z-index: -1;
   }
 
+/* Improve hero copy contrast over changing video frames without hiding the video. */
+.hero-content {
+  padding: 36px 40px 80px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78) 68%, rgba(255, 255, 255, 0.18));
+  box-shadow: 0 18px 48px rgba(7, 25, 44, 0.16);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.hero-heading,
+.hero-description {
+  color: #0a2447;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.hero-description {
+  opacity: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .hero-content {
+    padding: 28px 22px 52px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.88);
+  }
+}
+
 /* Lenigraf navigation base: white translucent background only. */
 .navbar {
   background-color: rgba(255, 255, 255, 0.86) !important;
