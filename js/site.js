@@ -164,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile navigation
   const navigation = document.querySelector('.navbar');
+  const hero = document.querySelector('.hero');
   const navigationButton = document.querySelector('.site-nav-button');
   const navigationMenu = document.querySelector('.site-nav-menu');
   if (navigation && navigationButton && navigationMenu) {
@@ -180,6 +181,18 @@ document.addEventListener('DOMContentLoaded', () => {
         navigationButton.setAttribute('aria-expanded', 'false');
       });
     });
+  }
+
+  // Header appearance follows the hero boundary.
+  if (navigation && hero) {
+    const updateHeaderState = () => {
+      const hasStartedScrolling = window.scrollY > 140;
+      navigation.classList.toggle('is-scrolled', hasStartedScrolling);
+    };
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('resize', updateHeaderState);
   }
 
   // Native form feedback

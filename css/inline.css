@@ -208,8 +208,45 @@ body * {
 
 /* Lenigraf navigation base: white translucent background only. */
 .navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background-color 220ms ease, box-shadow 220ms ease;
+}
+
+.navbar .nav-menu-item {
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+}
+
+.navbar .nav-menu-item:hover,
+.navbar .nav-menu-item:focus-visible,
+.navbar .site-icon-nav-menu {
+  color: #f4c400;
+}
+
+.navbar .nav-logo-img {
+  filter: none;
+  box-shadow: none;
+}
+
+.navbar.is-scrolled {
   background-color: rgba(255, 255, 255, 0.86) !important;
   box-shadow: 0 6px 14px rgba(8, 30, 52, 0.18) !important;
+  border-bottom-color: transparent;
+  transition: background-color 220ms ease, box-shadow 220ms ease;
+}
+
+.navbar.is-scrolled .nav-menu-item {
+  color: #17233b;
+  text-shadow: none;
+}
+
+.navbar.is-scrolled .site-icon-nav-menu {
+  color: #082d72;
 }
 
 .navbar .nav-logo-img {
@@ -227,7 +264,7 @@ body * {
   }
 }
 
-.navbar .primary-button {
+.primary-button {
   position: relative;
   color: #ffffff;
   background: #082d72;
@@ -236,7 +273,7 @@ body * {
   transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
-.navbar .primary-button::after {
+.primary-button::after {
   content: "";
   position: absolute;
   right: 0;
@@ -247,8 +284,8 @@ body * {
   pointer-events: none;
 }
 
-.navbar .primary-button:hover,
-.navbar .primary-button:focus-visible {
+.primary-button:hover,
+.primary-button:focus-visible {
   color: #082d72;
   background: #f4c400;
   transform: translateY(-1px);
