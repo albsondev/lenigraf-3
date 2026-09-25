@@ -3,6 +3,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   document.title = 'LENIGRAF | Serviços de Acabamentos Gráficos';
+  const themeColor = '#0a2d72';
+  let themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (!themeMeta) {
+    themeMeta = document.createElement('meta');
+    themeMeta.name = 'theme-color';
+    document.head.appendChild(themeMeta);
+  }
+  themeMeta.content = themeColor;
+  let appleStatusMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+  if (!appleStatusMeta) {
+    appleStatusMeta = document.createElement('meta');
+    appleStatusMeta.name = 'apple-mobile-web-app-status-bar-style';
+    document.head.appendChild(appleStatusMeta);
+  }
+  appleStatusMeta.content = 'black-translucent';
   const favicon = document.querySelector('link[rel="shortcut icon"], link[rel="icon"]');
   if (favicon) {
     favicon.href = 'assets/lenigraf/favicon.png';
