@@ -28,7 +28,7 @@ body * {
     will-change: color;
   }
 
-  .cta-form-input.w-select {
+  .cta-form-input.form-select {
     appearance: none; /* Standard */
     -webkit-appearance: none; /* Chrome/Safari */
     -moz-appearance: none; /* Firefox */
@@ -220,10 +220,6 @@ body * {
   transform: translateY(-1px);
 }
 
-.w-webflow-badge {
-  display: none !important;
-}
-
 /* Site-owned interaction states. */
 .auto-tabs-content-item[hidden] {
   display: none;
@@ -234,7 +230,7 @@ body * {
 }
 
 @media screen and (max-width: 991px) {
-  .nav-menu-warapper.is-open {
+  .site-nav-menu.is-open {
     display: flex;
   }
 }

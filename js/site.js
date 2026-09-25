@@ -124,16 +124,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 9. Tab hover (no nested DOMContentLoaded needed)
-  const tabLinks = document.querySelectorAll('.auto-tabs-menu .w-tab-link');
+  const tabLinks = document.querySelectorAll('.auto-tabs-menu .tab-link');
   let hoverTimer;
   const tabPanes = document.querySelectorAll('.auto-tabs-content-item');
 
   function activateTab(tab) {
-    const tabName = tab.dataset.wTab;
-    tabLinks.forEach((link) => link.classList.toggle('w--current', link === tab));
+    const tabName = tab.dataset.tab;
+    tabLinks.forEach((link) => link.classList.toggle('is-current', link === tab));
     tabPanes.forEach((pane) => {
-      const isActive = pane.dataset.wTab === tabName;
-      pane.classList.toggle('w--tab-active', isActive);
+      const isActive = pane.dataset.tab === tabName;
+      pane.classList.toggle('is-active', isActive);
       pane.hidden = !isActive;
     });
   }
@@ -153,13 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const initialTab = document.querySelector('.auto-tabs-menu .w--current') ?? tabLinks[0];
+  const initialTab = document.querySelector('.auto-tabs-menu .is-current') ?? tabLinks[0];
   if (initialTab) activateTab(initialTab);
 
   // Mobile navigation
   const navigation = document.querySelector('.navbar');
-  const navigationButton = document.querySelector('.mobile-menu');
-  const navigationMenu = document.querySelector('.nav-menu-warapper');
+  const navigationButton = document.querySelector('.site-nav-button');
+  const navigationMenu = document.querySelector('.site-nav-menu');
   if (navigation && navigationButton && navigationMenu) {
     navigationButton.setAttribute('aria-expanded', 'false');
     navigationButton.addEventListener('click', () => {
