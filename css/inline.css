@@ -62,29 +62,79 @@
 
 /* Improve hero copy contrast over changing video frames without hiding the video. */
 .hero-content {
-  padding: 36px 40px 80px;
-  border-radius: 18px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78) 68%, rgba(255, 255, 255, 0.18));
-  box-shadow: 0 18px 48px rgba(7, 25, 44, 0.16);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 140px 24px 110px;
+  text-align: center;
 }
 
-.hero-heading,
+.hero-right {
+  align-items: center;
+  width: min(100%, 520px);
+  padding: 24px 26px 26px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: 0 12px 30px rgba(7, 25, 44, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.46);
+  backdrop-filter: blur(10px) saturate(135%);
+  -webkit-backdrop-filter: blur(10px) saturate(135%);
+}
+
 .hero-description {
   color: #0a2447;
+  opacity: 1;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 }
 
-.hero-description {
-  opacity: 1;
+/* Subtle text halo: improves the heading contrast without creating a panel. */
+.hero-heading {
+  color: #fff;
+  text-shadow: none;
+}
+
+/* Soft white veil over the video: the motion remains visible as atmosphere. */
+.hero-ovarlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.77) 56%,
+    rgba(0, 0, 0, 0.71) 66%,
+    rgba(0, 0, 0, 0.56) 76%,
+    rgba(0, 0, 0, 0.32) 88%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+@media screen and (min-width: 992px) {
+  .hero-right {
+    align-items: stretch;
+  }
+
+  .hero-right .primary-button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .hero-content {
-    padding: 28px 22px 52px;
+    gap: 16px;
+    padding: 112px 18px 72px;
+  }
+
+  .hero-right {
+    width: 100%;
+    padding: 20px;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.48);
   }
 }
 
