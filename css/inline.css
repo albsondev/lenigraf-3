@@ -125,7 +125,7 @@ body * {
 
 .institutional-section {
   position: relative;
-  padding: clamp(72px, 9vw, 132px) 24px;
+  padding: clamp(48px, 6vw, 88px) 24px;
   background: #fff;
   color: #17233b;
 }
