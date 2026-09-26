@@ -64,7 +64,7 @@ body * {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 0;
   }
 
 /* Improve hero copy contrast over changing video frames without hiding the video. */
@@ -398,6 +398,74 @@ body * {
 }
 
 @media screen and (max-width: 991px) {
+  .navbar.is-open {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(100px) !important;
+    -webkit-backdrop-filter: blur(100px) !important;
+  }
+
+  .site-nav .site-nav-menu.is-open {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(100px) !important;
+    -webkit-backdrop-filter: blur(100px) !important;
+  }
+
+  .site-nav[data-collapse="medium"] .site-nav-menu.is-open {
+    display: flex;
+  }
+
+  .site-nav .site-nav-menu.is-open .nav-menu-item {
+    color: #17233b;
+    text-shadow: none;
+  }
+
+  .site-nav .site-nav-menu.is-open {
+    position: fixed;
+    top: 73px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    width: 100vw;
+    min-height: calc(100dvh - 73px);
+    overflow-y: auto;
+    text-align: center;
+    padding: 14px 20px 22px;
+    box-shadow: 0 10px 24px rgba(8, 30, 52, 0.16);
+    animation: mobile-menu-enter 180ms ease-out both;
+  }
+
+  .site-nav .site-nav-menu.is-open .nav-menu-item {
+    display: block;
+    width: 100%;
+    padding: 30px 4px;
+    border-bottom: 1px solid rgba(8, 45, 114, 0.12);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .site-nav .site-nav-menu.is-open .nav-menu-item:last-child {
+    border-bottom: 0;
+  }
+
+  @keyframes mobile-menu-enter {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .site-nav-menu.is-open {
     display: flex;
   }
