@@ -124,9 +124,22 @@ body * {
 }
 
 .institutional-section {
+  position: relative;
   padding: clamp(72px, 9vw, 132px) 24px;
   background: #fff;
   color: #17233b;
+}
+
+.institutional-section::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -28px;
+  right: 0;
+  left: 0;
+  height: 28px;
+  background: url("../assets/boaxt/69e2f3ba28bbe97219c18c0c_Frame%202147227196.png") top center / 100% auto no-repeat;
+  pointer-events: none;
 }
 
 .excellence-heading {
