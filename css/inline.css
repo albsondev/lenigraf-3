@@ -129,6 +129,20 @@ body * {
   color: #17233b;
 }
 
+.excellence-heading {
+  max-width: none;
+  font-size: clamp(1.9rem, 3.4vw, 3.4rem);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 767px) {
+  .excellence-heading {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+    white-space: normal;
+  }
+}
+
 .institutional-container {
   width: min(1180px, 100%);
   margin: 0 auto;
@@ -193,6 +207,57 @@ body * {
   margin: 8px 0 0;
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.82rem;
+  text-align: center;
+}
+
+.footer-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  width: 100%;
+}
+
+.footer-brand-lockup .footer-logo-wrap {
+  display: grid;
+  flex: 0 0 180px;
+  width: 180px;
+  height: 180px;
+  margin: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.footer-brand-lockup .footer-logo {
+  width: 140px;
+  max-width: 78%;
+}
+
+.footer-brand-copy {
+  min-width: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-brand-lockup {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .footer-brand-lockup .footer-logo-wrap {
+    flex-basis: 148px;
+    width: 148px;
+    height: 148px;
+  }
+
+  .footer-brand-lockup .footer-logo {
+    width: 116px;
+  }
+
+  .footer-brand-copy .footer-tagline {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 767px) {
