@@ -681,3 +681,120 @@ body * {
     display: flex;
   }
 }
+.engineering-section .engineering-header {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.engineering-section .engineering-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.engineering-section .engineering-card-wrapper {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.engineering-section .engineering-heading {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  color: #111;
+}
+
+.engineering-section .engineering-card {
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%);
+}
+
+.engineering-section .engineering-card-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #0a2d72 0%, #1c79c4 100%);
+}
+
+.cta-section .cta-content {
+  position: relative;
+}
+
+.cta-section .cta-content::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 32px;
+  right: -38px;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    #42b9e8 0% 22%,
+    #e33136 28% 47%,
+    #f4c400 53% 72%,
+    #082d72 78% 100%
+  );
+  pointer-events: none;
+}
+
+@media screen and (max-width: 991px) {
+  .cta-section .cta-content::after {
+    display: none;
+  }
+}
+
+.engineering-section .video-play-button {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(10, 45, 114, 0.88);
+  color: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  transform: translate(-50%, -50%);
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.engineering-section .video-play-button:hover,
+.engineering-section .video-play-button:focus-visible {
+  background: #0a2d72;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.engineering-section .video-play-button[hidden] {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .engineering-section .engineering-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .engineering-section .engineering-header,
+  .engineering-section .engineering-card-wrapper {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
