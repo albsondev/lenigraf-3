@@ -21,21 +21,46 @@ document.addEventListener('DOMContentLoaded', () => {
     smoothTouch: 0.1,
   });
 
-  // 3. Swiper — marine engineering slider
-  const engineeringSwiper = new Swiper('.marine-engineering', {
-    slidesPerView: 1,
-    spaceBetween: 24,
-    navigation: {
-      nextEl: '.slider-nav-next',
-      prevEl: '.slider-nav-prev',
-    },
-    breakpoints: {
-      1920: { slidesPerView: 3.3 },
-      1440: { slidesPerView: 3 },
-      991:  { slidesPerView: 2.6 },
-      768:  { slidesPerView: 2 },
-    },
-  });
+  // 3. Load the carousel only when it approaches the viewport.
+  const marineSlider = document.querySelector('.marine-engineering-slider');
+  if (marineSlider) {
+    const initEngineeringSwiper = () => {
+      if (!window.Swiper) return;
+
+      new window.Swiper('.marine-engineering', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        navigation: {
+          nextEl: '.slider-nav-next',
+          prevEl: '.slider-nav-prev',
+        },
+        breakpoints: {
+          1920: { slidesPerView: 3.3 },
+          1440: { slidesPerView: 3 },
+          991: { slidesPerView: 2.6 },
+          768: { slidesPerView: 2 },
+        },
+      });
+    };
+
+    const loadSwiper = () => {
+      const script = document.createElement('script');
+      script.src = 'js/vendor/swiper.js';
+      script.onload = initEngineeringSwiper;
+      document.head.appendChild(script);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const sliderObserver = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        sliderObserver.disconnect();
+        loadSwiper();
+      }, { rootMargin: '600px 0px' });
+      sliderObserver.observe(marineSlider);
+    } else {
+      loadSwiper();
+    }
+  }
 
   // 4. Scroll-driven text color reveal
   const container = document.getElementById('animated-text');
