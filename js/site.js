@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: '.engineering-area',
         start: 'top top',
         end: 'bottom bottom',
-        pin: '.engineering-header',
+        pin: '.engineering-area .section-heading',
         pinSpacing: false,
         invalidateOnRefresh: true,
       });
@@ -194,6 +194,27 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateHeaderState, { passive: true });
     window.addEventListener('resize', updateHeaderState);
   }
+
+  // Process videos load only after an explicit play action.
+  document.querySelectorAll('.engineering-card').forEach((card) => {
+    const video = card.querySelector('.lazy-process-video');
+    const playButton = card.querySelector('.video-play-button');
+    const source = video?.querySelector('source[data-src]');
+    if (!video || !playButton || !source) return;
+
+    playButton.addEventListener('click', async () => {
+      source.src = source.dataset.src;
+      source.removeAttribute('data-src');
+      video.controls = true;
+      video.load();
+      playButton.hidden = true;
+      try {
+        await video.play();
+      } catch {
+        playButton.hidden = false;
+      }
+    });
+  });
 
   // Native form feedback
   document.querySelectorAll('.cta-form form').forEach((form) => {
