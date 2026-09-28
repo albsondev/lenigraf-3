@@ -74,7 +74,7 @@
             <img src="assets/lenigraf/logo-site.png" loading="eager" fetchpriority="high" width="768" height="512" alt="Lenigraf" class="nav-logo-img" />
           </a>
           <nav role="navigation" class="nav-menu-warapper site-nav-menu">
-            <a href="index.html#concept" class="nav-menu-item">Sobre a LENIGRAF</a>
+            <a href="index.html#about" class="nav-menu-item">Sobre a LENIGRAF</a>
             <a href="index.html#application" class="nav-menu-item">Serviços</a>
             <a href="index.html#advantages" class="nav-menu-item">Aplicações</a>
             <a href="index.html#gallery" class="nav-menu-item">Trabalhos</a>
@@ -728,36 +728,36 @@
                 </p>
                 <div class="cta-form site-form">
                   <form
-                    method="get"
-                    name=""
-                    data-name="Html Form"
-                    data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"
+                    action="https://formsubmit.co/orcamento@lenigraf.com.br"
+                    method="post"
                   >
+                    <input type="hidden" name="_subject" value="Novo pedido de orçamento pelo site LENIGRAF" />
+                    <input type="hidden" name="_template" value="table" />
                     <div class="form-field-wrapper">
                       <div class="cta-group-filed">
                         <div class="form-single-filed">
-                          <label for="field" class="form-input-label">Primeiro nome</label>
+                          <label for="first-name" class="form-input-label">Primeiro nome</label>
                           <input
                             class="cta-form-input form-input"
                             maxlength="256"
                             name="first-name"
                             data-name="first-name"
-                            placeholder="Nome"
+                            placeholder="Seu nome"
                             type="text"
-                            id="field"
+                            id="first-name"
                             required=""
                           />
                         </div>
                         <div class="form-single-filed">
-                          <label for="field" class="form-input-label">Último nome</label>
+                          <label for="last-name" class="form-input-label">Último nome</label>
                           <input
                             class="cta-form-input form-input"
                             maxlength="256"
                             name="last-name"
                             data-name="last-name"
-                            placeholder="Sobrenome"
+                            placeholder="Seu sobrenome"
                             type="text"
-                            id="field"
+                            id="last-name"
                           />
                         </div>
                       </div>
@@ -769,7 +769,7 @@
                             maxlength="256"
                             name="email"
                             data-name="email"
-                            placeholder="Nome"
+                            placeholder="seu@email.com"
                             type="email"
                             id="email"
                             required=""
@@ -782,41 +782,34 @@
                             maxlength="256"
                             name="phone"
                             data-name="phone"
-                            placeholder="Sobrenome"
+                            placeholder="(11) 00000-0000"
                             type="tel"
                             id="phone"
                           />
                         </div>
                       </div>
                       <div class="form-single-filed">
-                        <label for="Message" class="form-input-label"
+                        <label for="message" class="form-input-label"
                           >Especificação desejada <span class="optional">(Opcional)</span>
                         </label>
                         <textarea
                           class="cta-form-textarea form-input"
                           maxlength="5000"
-                          name="Message"
-                          data-name="Message"
+                          name="message"
+                          data-name="message"
                           placeholder="Conte sua necessidade..."
                           rows="4"
-                          id="Message"
+                          id="message"
                         ></textarea>
                       </div>
                       <button
                         type="submit"
-                        data-wait="Please wait..."
                         class="form-submit-button form-button primary-button"
                       >
                         Solicitar orçamento
                       </button>
                     </div>
                   </form>
-                  <div class="success-message form-success">
-                    <div>Obrigado! Sua mensagem foi recebida.</div>
-                  </div>
-                  <div class="form-error">
-                    <div>Ops! Ocorreu um erro ao enviar o formulário.</div>
-                  </div>
                 </div>
               </div>
               <div class="cta-image-wrapper">

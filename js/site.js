@@ -253,14 +253,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Native form feedback
-  document.querySelectorAll('.cta-form form').forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const successMessage = form.parentElement.querySelector('.success-message');
-      if (successMessage) successMessage.classList.add('is-visible');
-      form.reset();
-    });
-  });
-
 }); // ← this was missing — closes DOMContentLoaded
