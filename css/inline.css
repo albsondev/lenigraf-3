@@ -17,6 +17,50 @@ body * {
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
   }
 
+  .footer-social-icon.social-icon-corner-corp {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #ffffff;
+    background: #082d72;
+  }
+
+  .footer-social-icon.social-icon-corner-corp::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #42b9e8 0%, #e33136 52%, #f4c400 100%);
+    pointer-events: none;
+  }
+
+  .excellence-card-icon {
+    position: relative;
+    overflow: hidden;
+    background-color: #082d72;
+    color: #ffffff;
+  }
+
+  .excellence-card-icon::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #42b9e8 0%, #e33136 52%, #f4c400 100%);
+    pointer-events: none;
+  }
+
+  .excellence-card-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
   .animation-text {
     line-height: 1.1;
     color: #d0d0d0;
@@ -458,6 +502,36 @@ body * {
   text-shadow: none;
 }
 
+.navbar.is-scrolled .nav-menu-item:hover,
+.navbar.is-scrolled .nav-menu-item:focus-visible {
+  color: #c89f00;
+}
+
+.navbar.is-scrolled .nav-menu-item {
+  position: relative;
+}
+
+.navbar.is-scrolled .nav-menu-item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #42b9e8 0%, #e33136 52%, #f4c400 100%);
+  opacity: 0;
+  transform: scaleX(0.35);
+  transform-origin: center;
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+.navbar.is-scrolled .nav-menu-item:hover::after,
+.navbar.is-scrolled .nav-menu-item:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 .navbar.is-scrolled .site-icon-nav-menu {
   color: #082d72;
 }
@@ -749,6 +823,32 @@ body * {
     #082d72 78% 100%
   );
   pointer-events: none;
+}
+
+.footer-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: #25d366;
+  text-decoration: none;
+}
+
+.footer-whatsapp-link svg {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  fill: currentColor;
+}
+
+.footer-whatsapp-link:hover,
+.footer-whatsapp-link:focus-visible {
+  color: #1ebe5d;
+}
+
+.footer-copyright {
+  width: 100%;
+  text-align: center;
 }
 
 @media screen and (max-width: 991px) {

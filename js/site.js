@@ -100,21 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
 
-  // 6. Sticky engineering header — desktop/large only (992px and up)
-  ScrollTrigger.matchMedia({
-    "(min-width: 992px)": function() {
-      ScrollTrigger.create({
-        trigger: '.engineering-area',
-        start: 'top top',
-        end: 'bottom bottom',
-        pin: '.engineering-area .section-heading',
-        pinSpacing: false,
-        invalidateOnRefresh: true,
-      });
-    }
-  });
-
-  // 7. Refresh ScrollTrigger as lazy-loaded images come in
+  // 6. Refresh ScrollTrigger as lazy-loaded images come in
   const lazyImages = document.querySelectorAll('img[loading="lazy"]');
   lazyImages.forEach((img) => {
     if (img.complete) return;
@@ -194,6 +180,32 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateHeaderState, { passive: true });
     window.addEventListener('resize', updateHeaderState);
   }
+
+  // ScrollSmoother owns the page scroll, so route same-page anchors through it.
+  document.querySelectorAll('a[href*="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href') ?? '';
+      const hash = href.split('#')[1] ?? '';
+      const target = hash ? document.getElementById(hash) : null;
+
+      if (link.closest('.site-nav-menu') && navigation && navigationButton && navigationMenu) {
+        navigation.classList.remove('is-open');
+        navigationMenu.classList.remove('is-open');
+        navigationButton.setAttribute('aria-expanded', 'false');
+      }
+
+      if (!hash) {
+        event.preventDefault();
+        smoother.scrollTo(0, true);
+        return;
+      }
+
+      if (!target) return;
+
+      event.preventDefault();
+      smoother.scrollTo(target, true, 'top top');
+    });
+  });
 
   // Process videos load only after an explicit play action.
   document.querySelectorAll('.engineering-card').forEach((card) => {
