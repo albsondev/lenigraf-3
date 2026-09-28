@@ -34,8 +34,25 @@
     <title>LENIGRAF | Serviços de Acabamentos Gráficos</title>
     <link rel="icon" href="assets/lenigraf/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="assets/lenigraf/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    </noscript>
     <link href="css/site-base.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/swiper.css" />
+    <link
+      rel="preload"
+      as="style"
+      href="css/swiper.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/swiper.css" /></noscript>
 
     <link rel="stylesheet" href="css/inline.css?v=mobile-menu-glass-final" />
   </head>
@@ -52,7 +69,7 @@
       <div class="container site-container">
         <div class="nav-inner">
           <a href="index.html#" class="nav-logo inline-block">
-            <img src="assets/lenigraf/logo-rgba.png" loading="lazy" alt="Lenigraf" class="nav-logo-img" />
+            <img src="assets/lenigraf/logo-site.png" loading="eager" fetchpriority="high" alt="Lenigraf" class="nav-logo-img" />
           </a>
           <nav role="navigation" class="nav-menu-warapper site-nav-menu">
             <a href="index.html#concept" class="nav-menu-item">Sobre a LENIGRAF</a>
@@ -811,7 +828,7 @@
             <div class="footer-top">
               <div class="footer-brand-lockup">
                 <a href="index.html" aria-current="page" class="footer-logo-wrap inline-block is-current">
-                  <img src="assets/lenigraf/logo-rgba.png" loading="lazy" alt="Lenigraf" class="footer-logo" />
+                  <img src="assets/lenigraf/logo-site.png" loading="lazy" alt="Lenigraf" class="footer-logo" />
                 </a>
                 <div class="footer-brand-copy">
                   <h2 class="footer-tagline">Acabamentos gráficos desde 1994</h2>
