@@ -799,18 +799,15 @@ body * {
 
 .cta-section {
   background: linear-gradient(135deg, #0a2d72 0%, #1c79c4 100%);
+  --cta-image-width: 48%;
 }
 
-.cta-section .cta-content {
-  position: relative;
-}
-
-.cta-section .cta-content::after {
+.cta-section::after {
   content: "";
   position: absolute;
   z-index: 2;
   top: 32px;
-  right: -38px;
+  left: calc(100% - var(--cta-image-width) - 4px);
   bottom: 0;
   width: 4px;
   background: linear-gradient(
@@ -821,6 +818,12 @@ body * {
     #082d72 78% 100%
   );
   pointer-events: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .cta-section {
+    --cta-image-width: 50%;
+  }
 }
 
 .footer-whatsapp-link {
@@ -850,7 +853,7 @@ body * {
 }
 
 @media screen and (max-width: 991px) {
-  .cta-section .cta-content::after {
+  .cta-section::after {
     display: none;
   }
 }

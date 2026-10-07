@@ -1791,7 +1791,7 @@ h2 {
   }
 
   .cta-image {
-    width: 50%;
+    width: var(--cta-image-width, 50%);
   }
 
   .nav-menu-warapper {
