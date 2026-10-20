@@ -1,0 +1,36 @@
+/*======= index.html =======*/
+#page1 header {height:562px;}
+#page1 .col-1 {width:265px;}
+#page1 .col-2 { width:622px;}
+#page1 .col-5 { width:260px;}
+
+/*======= index-1.html =======*/
+#page2 .col-1 {width:265px;}
+#page2 .col-2 { width:622px;}
+#page2 .col-5 { width:260px;}
+
+/*======= index-2.html =======*/
+#page3 .col-1 {width:265px;}
+#page3 .col-2 { width:622px;}
+#page3 .col-5 { width:260px;}
+
+/*======= index-3.html =======*/
+#page4 .col-1 {width:265px;}
+#page4 .col-2 { width:622px;}
+#page4 .col-5 { width:260px;}
+
+/*======= index-4.html =======*/
+#page5 .col-1 {width:265px;}
+#page5 .col-2 { width:622px;}
+#page5 .col-5 { width:260px;}
+
+/*======= index-5.html =======*/
+#page6 .col-1 {width:265px;}
+#page6 .col-2 { width:622px;}
+#page6 .col-5 { width:260px;}
+
+/*======= index-6.html =======*/
+#page7 .col-1 {width:265px;}
+#page7 .col-2 { width:622px;}
+#page7 .col-2 .col-1 { width:280px;}
+#page7 .col-5 { width:260px;}
