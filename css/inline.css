@@ -1,113 +1,113 @@
 body,
 body * {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
 .corner-crop {
-    clip-path: polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 0 100%);
-  }
+  clip-path: polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 0 100%);
+}
 
-  .icon-corner-corp {
-    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
-  }
+.icon-corner-corp {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+}
 
-  .social-icon-corner-corp {
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
-  }
+.social-icon-corner-corp {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
 
-  .footer-social-icon.social-icon-corner-corp {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: #ffffff;
-    background: #082d72;
-  }
+.footer-social-icon.social-icon-corner-corp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #ffffff;
+  background: #082d72;
+}
 
-  .footer-social-icon.social-icon-corner-corp::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #42b9e8 0%, #e33136 52%, #f4c400 100%);
-    pointer-events: none;
-  }
+.footer-social-icon.social-icon-corner-corp::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #42b9e8 0%, #e33136 52%, #f4c400 100%);
+  pointer-events: none;
+}
 
-  .excellence-card-icon {
-    position: relative;
-    overflow: hidden;
-    background-color: #082d72;
-    color: #ffffff;
-  }
+.excellence-card-icon {
+  position: relative;
+  overflow: hidden;
+  background-color: #082d72;
+  color: #ffffff;
+}
 
-  .excellence-card-icon::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #42b9e8 0%, #e33136 52%, #f4c400 100%);
-    pointer-events: none;
-  }
+.excellence-card-icon::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #42b9e8 0%, #e33136 52%, #f4c400 100%);
+  pointer-events: none;
+}
 
-  .excellence-card-icon svg {
-    width: 100%;
-    height: 100%;
-  }
+.excellence-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
 
-  .animation-text {
-    line-height: 1.1;
-    color: #d0d0d0;
-  }
+.animation-text {
+  line-height: 1.1;
+  color: #d0d0d0;
+}
 
-  .word {
-    display: inline-block;
-    white-space: pre;
-    will-change: color;
-  }
+.word {
+  display: inline-block;
+  white-space: pre;
+  will-change: color;
+}
 
-  .cta-form-input.form-select {
-    appearance: none; /* Standard */
-    -webkit-appearance: none; /* Chrome/Safari */
-    -moz-appearance: none; /* Firefox */
-    background-image: none; /* Remove default arrow in some browsers */
-  }
+.cta-form-input.form-select {
+  appearance: none; /* Standard */
+  -webkit-appearance: none; /* Chrome/Safari */
+  -moz-appearance: none; /* Firefox */
+  background-image: none; /* Remove default arrow in some browsers */
+}
 
+.auto-tabs-content-item::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 100%;
+  max-height: 310px;
+  background-image: url(../assets/boaxt/69e9f5205ffea950f2e0040d_Rectangle%2034624701.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999999999999;
+}
+
+@media (max-width: 1024px) {
   .auto-tabs-content-item::before {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 100%;
-    max-height: 310px;
-    background-image: url(../assets/boaxt/69e9f5205ffea950f2e0040d_Rectangle%2034624701.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: -2px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 999999999999;
+    display: none;
   }
-
-  @media (max-width: 1024px){
-      .auto-tabs-content-item::before {
-        display:none;
-      }
-  }
+}
 
 .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 
 /* Improve hero copy contrast over changing video frames without hiding the video. */
 .hero-content {
@@ -142,7 +142,7 @@ body * {
 
 .hero-description {
   color: #fff;
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   width: 100%;
   font-size: clamp(0.9rem, 1.1vw, 1.15rem);
   font-weight: 400;
@@ -154,14 +154,16 @@ body * {
 /* Subtle text halo: improves the heading contrast without creating a panel. */
 .hero-heading {
   color: #fff;
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(2.6rem, 5vw, 4.8rem);
   font-weight: 800;
   letter-spacing: -0.055em;
   line-height: 0.98;
   max-width: 1000px;
   text-wrap: balance;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.48), 0 1px 2px rgba(0, 0, 0, 0.32);
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.48),
+    0 1px 2px rgba(0, 0, 0, 0.32);
   margin-bottom: 0;
 }
 
@@ -180,7 +182,8 @@ body * {
   right: 0;
   left: 0;
   height: 28px;
-  background: url("../assets/boaxt/69e2f3ba28bbe97219c18c0c_Frame%202147227196.png") top center / 100% auto no-repeat;
+  background: url("../assets/boaxt/69e2f3ba28bbe97219c18c0c_Frame%202147227196.png")
+    top center / 100% auto no-repeat;
   pointer-events: none;
 }
 
@@ -440,7 +443,6 @@ body * {
     padding: clamp(24px, 4vh, 40px) 18px clamp(56px, 9vh, 88px);
   }
 
-
   .hero-heading {
     width: 100%;
     max-width: none;
@@ -468,7 +470,9 @@ body * {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: background-color 220ms ease, box-shadow 220ms ease;
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .navbar .nav-menu-item {
@@ -492,7 +496,9 @@ body * {
   background-color: rgba(255, 255, 255, 0.86) !important;
   box-shadow: 0 6px 14px rgba(8, 30, 52, 0.18) !important;
   border-bottom-color: transparent;
-  transition: background-color 220ms ease, box-shadow 220ms ease;
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .navbar.is-scrolled .nav-menu-item {
@@ -510,7 +516,7 @@ body * {
 }
 
 .navbar.is-scrolled .nav-menu-item::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   bottom: -5px;
@@ -520,7 +526,9 @@ body * {
   opacity: 0;
   transform: scaleX(0.35);
   transform-origin: center;
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
   pointer-events: none;
 }
 
@@ -637,7 +645,11 @@ body * {
   background: #082d72;
   border: 0;
   box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12);
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
 .primary-button::after {
@@ -672,12 +684,13 @@ body * {
     background-color: rgba(255, 255, 255, 0.95) !important;
     border-bottom: 3px solid transparent !important;
     border-image: linear-gradient(
-      90deg,
-      #42b9e8 0% 22%,
-      #e33136 28% 47%,
-      #f4c400 53% 72%,
-      #082d72 78% 100%
-    ) 1 !important;
+        90deg,
+        #42b9e8 0% 22%,
+        #e33136 28% 47%,
+        #f4c400 53% 72%,
+        #082d72 78% 100%
+      )
+      1 !important;
     backdrop-filter: blur(100px) !important;
     -webkit-backdrop-filter: blur(100px) !important;
     box-shadow: none !important;
@@ -875,7 +888,9 @@ body * {
   cursor: pointer;
   font-size: 22px;
   transform: translate(-50%, -50%);
-  transition: transform 180ms ease, background-color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
 }
 
 .engineering-section .video-play-button:hover,
